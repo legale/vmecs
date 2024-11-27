@@ -1,5 +1,17 @@
+#ifndef USE_MBEDTLS
+
 #include <openssl/evp.h>
 #include <openssl/err.h>
+
+#else
+
+#include <mbedtls/aes.h>
+#include <mbedtls/error.h>
+//evp mbedtls replacement
+#include "evp.h"
+
+#endif
+
 
 #include "pub/err.h"
 

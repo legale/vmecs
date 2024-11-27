@@ -1,7 +1,21 @@
+#ifndef USE_MBEDTLS
+
 #include <openssl/md5.h>
 #include <openssl/err.h>
 #include <openssl/evp.h>
 #include <openssl/hmac.h>
+
+#else
+
+#include <mbedtls/md5.h>
+#include <mbedtls/error.h>
+#include <mbedtls/md.h>
+#include <mbedtls/platform.h>
+//evp mbedtls replacement
+#include "evp.h"
+
+#endif
+
 
 #include "hash.h"
 
